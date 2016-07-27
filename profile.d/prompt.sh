@@ -1,11 +1,9 @@
 # This prompt inspired by gf3, sindresorhus, alrra, and mathiasbynens.
 # but customized to me. <3
 
-default_username='alimd'
-
+#default_username='alimd'
 
 # eval "$(thefuck --alias)"
-
 
 if [[ -n "$ZSH_VERSION" ]]; then  # quit now if in zsh
     return 1 2> /dev/null || exit 1;
@@ -82,7 +80,7 @@ set_prompts() {
         userhost+="${cyan}$HOSTNAME "
         userhost+="${white}in "
 
-        if [ $USER != "$default_username" ]; then echo $userhost ""; fi
+        #if [ $USER != "$default_username" ]; then echo $userhost ""; fi
         echo -e "$userhost"
     }
 
