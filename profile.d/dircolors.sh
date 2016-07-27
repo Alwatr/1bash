@@ -1,2 +1,2 @@
 
-eval $( dircolors -b $DEVTOOLS/ali.md/.dircolors )
+eval $( dircolors -b ./dircolors )
