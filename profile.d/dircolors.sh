@@ -1,2 +1,1 @@
-
-eval $( dircolors -b ./dircolors )
+eval $( dircolors -b /etc/profile.d/dircolors )

@@ -4,7 +4,7 @@
 default_username='alimd'
 
 
-eval "$(thefuck --alias)"
+# eval "$(thefuck --alias)"
 
 
 if [[ -n "$ZSH_VERSION" ]]; then  # quit now if in zsh
