@@ -169,3 +169,24 @@ webmify(){
 function nullify() {
   "$@" >/dev/null 2>&1
 }
+
+#docker
+alias d="docker"
+alias dls="docker ps --format '{{.ID}}  -  {{.Names}}  -  {{.Status}}  -  {{.Size}}  -  {{.Ports}}' -s"
+
+function d-terminate {
+	docker stop $1
+	docker wait $1
+	docker rm $1
+}
+
+function d-terminate {
+	docker stop $1
+	docker wait $1
+	docker rm $1
+}
+
+function d-terminate-exited {
+	docker ps --filter 'status=exited' -aq | xargs docker rm
+	docker ps --filter 'status=dead' -aq | xargs docker rm
+}
