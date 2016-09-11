@@ -55,7 +55,7 @@ alias push="git push"
 alias undopush="git push -f origin HEAD^:master"
 
 # git root
-alias gr="[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`"
+alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`'
 alias master="git checkout master"
 alias develop="git checkout develop"
 
