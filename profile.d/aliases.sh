@@ -10,15 +10,15 @@ alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
 # mv, rm, cp
-alias mv='mv -v'
-alias rm='rm -i -v'
-alias cp='cp -v'
+alias mv="mv -v"
+alias rm="rm -i -v"
+alias cp="cp -v"
 
 alias where=which # sometimes i forget
 
-alias hosts='sudo $EDITOR /etc/hosts'   # yes I occasionally 127.0.0.1 twitter.com ;)
+alias hosts="sudo $EDITOR /etc/hosts"   # yes I occasionally 127.0.0.1 twitter.com ;)
 
-#alias ag='ag -f --hidden'
+#alias ag="ag -f --hidden"
 
 ###
 # time to upgrade `ls`
@@ -31,14 +31,14 @@ if ls --color > /dev/null 2>&1; then colorflag="--color"; else colorflag="-G"; f
 export CLICOLOR_FORCE=1
 
 # ls options: A = include hidden (but not . or ..), F = put `/` after folders, h = byte unit suffixes
-alias ls='ls -lAhF ${colorflag} --group-directories-first'
-alias lsd='ls | grep "^d"' # only directories
+alias ls="ls -lAhF ${colorflag} --group-directories-first"
+alias lsd="ls | grep '^d'" # only directories
 # `la` defined in .functions
 ###
 
 
 # `cat` with beautiful colors. requires: sudo easy_install -U Pygments
-#alias c='pygmentize -O style=monokai -f console256 -g'
+#alias c="pygmentize -O style=monokai -f console256 -g"
 
 ###
 # GIT STUFF
@@ -55,7 +55,7 @@ alias push="git push"
 alias undopush="git push -f origin HEAD^:master"
 
 # git root
-alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`'
+alias gr="[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`"
 alias master="git checkout master"
 alias develop="git checkout develop"
 
