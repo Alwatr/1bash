@@ -81,5 +81,5 @@ alias ungz="gunzip -k"
 
 #docker
 alias d="docker"
-alias dps="docker ps --format 'table {{.ID}}\t{{.Names}}\t{{.CreatedAt}}\t{{.Status}}\t{{.Ports}}'"
+alias dps="docker ps --format 'table {{.ID}}\t{{.Names}}\t{{.RunningFor}}\t{{.Status}}\t{{.Ports}}'"
 alias dc="docker-compose"
