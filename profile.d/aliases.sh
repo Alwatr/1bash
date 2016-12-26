@@ -78,3 +78,8 @@ alias ungz="gunzip -k"
 
 # File size
 #alias fs="stat -f \"%z bytes\""
+
+#docker
+alias d="docker"
+alias dps="docker ps --format '{{.ID}}  -  {{.Names}}  -  {{.Status}}  -  {{.Size}}  -  {{.Ports}}' -s"
+alias dc="docker-compose"
