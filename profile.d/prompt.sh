@@ -69,7 +69,7 @@ set_prompts() {
 
         # Highlight the user name when logged in as root.
         if [[ "${USER}" == *"root" ]]; then
-            ]le="${red}";
+            userStyle="${red}";
         else
             userStyle="${orange}";
         fi;
