@@ -96,7 +96,7 @@ set_prompts() {
             git symbolic-ref --quiet --short HEAD 2> /dev/null) ($(\
             git describe --tags --exact-match HEAD 2> /dev/null || \
             git rev-parse --short HEAD 2> /dev/null || \
-            echo '(unknown)' \
+            echo -n 'unknown' \
         ))";
 
         dirty=$(git diff --no-ext-diff --quiet --ignore-submodules --exit-code || echo -e "*")
