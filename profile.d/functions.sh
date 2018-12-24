@@ -19,7 +19,7 @@ function f() {
 }
 
 # List all files, long format, colorized, permissions in octal
-function l(){
+function la(){
  	lsa -l  "$@" | awk '
     {
       k=0;
