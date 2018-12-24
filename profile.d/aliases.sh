@@ -1,3 +1,11 @@
+#!/bin/bash
+
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
 export EDITOR="nano"
 
 # Easier navigation: .., ..., ~ and -
@@ -23,7 +31,7 @@ alias where=which # sometimes i forget
 #hash gls >/dev/null 2>&1 || alias gls="ls"
 
 # always use color, even when piping (to awk,grep,etc)
-if ls --color > /dev/null 2>&1; then colorflag="--color"; else colorflag="-G"; fi;
+if ls --color=auto > /dev/null 2>&1; then colorflag="--color=auto"; else colorflag="-G"; fi;
 export CLICOLOR_FORCE=1
 
 # ls options: A = include hidden (but not . or ..), F = put `/` after folders, h = byte unit suffixes

@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+
 # Create a new directory and enter it
 function md() {
 	mkdir -p "$@" && cd "$@"
