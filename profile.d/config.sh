@@ -12,7 +12,7 @@ HISTCONTROL=ignoreboth
 
 # append to the history file, don't overwrite it
 shopt -s histappend
-6
+
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTFILESIZE=99999999
 HISTSIZE=99999999
@@ -55,7 +55,4 @@ if ! shopt -oq posix; then
   elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
   fi
-
-  # cd /srv
-  l
 fi
