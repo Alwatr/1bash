@@ -21,8 +21,11 @@ then
   mv -v ~/.bashrc ~/bashrc.old
 fi
 
+echo " "
+echo " "
 read -p "Press enter to change your gitconfig."
 nano ~/.gitconfig
 
+echo " "
 read -p "Press enter to change your logo"
 nano /etc/profile.d/logo.txt
