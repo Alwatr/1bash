@@ -1,6 +1,14 @@
 #!/bin/bash
-
+if [[ -f /etc/profile.d/logo.txt ]]
+then
+  mv -v /etc/profile.d/logo.txt /etc/profile.d/logo.bak
+fi
 cp -v profile.d/* /etc/profile.d/
+if [[ -f /etc/profile.d/logo.bak ]]
+then
+  mv -v /etc/profile.d/logo.bak /etc/profile.d/logo.txt
+fi
+
 
 if [[ -f ~/.inputrc && ! -f ~/inputrc.old ]]
 then
