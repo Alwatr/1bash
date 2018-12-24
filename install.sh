@@ -10,15 +10,15 @@ fi
 cp -v .inputrc ~/.inputrc
 
 
-if [[ -f ~/.bashrc && ! -f ~/bashrc.old ]]
-then
-  mv -v ~/.bashrc ~/bashrc.old
-fi
-
-
 if [[ -f ~/.gitconfig && ! -f ~/gitconfig.old ]]
 then
   mv -v ~/.gitconfig ~/gitconfig.old
+fi
+cp -v .gitconfig ~/.gitconfig
+
+if [[ -f ~/.bashrc && ! -f ~/bashrc.old ]]
+then
+  mv -v ~/.bashrc ~/bashrc.old
 fi
 
 read -p "Press enter to change your gitconfig."
