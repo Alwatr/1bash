@@ -12,8 +12,8 @@ function f() {
 }
 
 # List all files, long format, colorized, permissions in octal
-function la(){
- 	ls -l  "$@" | awk '
+function l(){
+ 	lsa -l  "$@" | awk '
     {
       k=0;
       for (i=0;i<=8;i++)
@@ -24,13 +24,6 @@ function la(){
     }'
 }
 
-# cd into whatever is the forefront Finder window.
-cdf() {  # short for cdfinder
-  cd "`osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)'`"
-}
-
-
-
 # git commit browser. needs fzf
 log() {
   git log --graph --color=always \
@@ -40,25 +33,6 @@ log() {
                 echo '{}' | grep -o '[a-f0-9]\{7\}' | head -1 |
                 xargs -I % sh -c 'git show --color=always % | less -R'"
 }
-
-
-
-# Start an HTTP server from a directory, optionally specifying the port
-function server() {
-	local port="${1:-8000}"
-	open "http://localhost:${port}/" &
-	# statik is good because it won't expose hidden folders/files by default.
-	# npm install -g statik
-	statik --port "$port" .
-}
-
-
-# Copy w/ progress
-cp_p () {
-  rsync -WavP --human-readable --progress $1 $2
-}
-
-
 
 # get gzipped size
 function gz() {

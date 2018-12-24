@@ -1,4 +1,4 @@
-export EDITOR="vi"
+export EDITOR="nano"
 
 # Easier navigation: .., ..., ~ and -
 alias ..="cd .."
@@ -10,15 +10,11 @@ alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
 # mv, rm, cp
-alias mv="mv -v"
-alias rm="rm -i -v"
-alias cp="cp -v"
+# alias mv="mv -v"
+# alias rm="rm -i -v"
+# alias cp="cp -v"
 
 alias where=which # sometimes i forget
-
-alias hosts="sudo $EDITOR /etc/hosts"   # yes I occasionally 127.0.0.1 twitter.com ;)
-
-#alias ag="ag -f --hidden"
 
 ###
 # time to upgrade `ls`
@@ -31,7 +27,7 @@ if ls --color > /dev/null 2>&1; then colorflag="--color"; else colorflag="-G"; f
 export CLICOLOR_FORCE=1
 
 # ls options: A = include hidden (but not . or ..), F = put `/` after folders, h = byte unit suffixes
-alias ls="ls -lAhF ${colorflag} --group-directories-first"
+alias lsa="ls -lAhF ${colorflag} --group-directories-first"
 alias lsd="ls | grep '^d'" # only directories
 # `la` defined in .functions
 ###
@@ -41,48 +37,33 @@ alias lsd="ls | grep '^d'" # only directories
 #alias c="pygmentize -O style=monokai -f console256 -g"
 
 ###
-# GIT STUFF
-
-function clone() {
-    git clone --depth=1 $1
-    cd $(basename ${1%.*})
-    bower install &
-    npm install
-}
-alias push="git push"
-
-# Undo a `git push`
-alias undopush="git push -f origin HEAD^:master"
-
-# git root
-alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`'
-alias master="git checkout master"
-alias develop="git checkout develop"
 
 # Networking. IP address, dig, DNS
 # alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 # alias dig="dig +nocmd any +multiline +noall +answer"
 # wget sucks with certificates. Let's keep it simple.
-alias wget="curl -O"
+# alias wget="curl -O"
 
 # Recursively delete `.DS_Store` files
 alias clean_ds_store="find . -name '*.DS_Store' -type f -ls -delete"
 
 alias diskspace="df -P -kHl"
-alias freedisk="diskspace"
 
 # Shortcuts
+alias a="apt"
+alias ai="apt install -y"
 alias g="git"
 alias v="vim"
-alias ungz="gunzip -k"
+alias n="nano"
+alias r="rsync -aPzh"
+alias rd="rsync -aPzh --delete"
+alias ds="diskspace"
 
-# File size
-#alias fs="stat -f \"%z bytes\""
-
-#docker
 alias d="docker"
-alias dps="docker ps --format 'table {{.ID}}\t{{.Names}}\t{{.RunningFor}}\t{{.Status}}\t{{.Ports}}'"
 alias dc="docker-compose"
+alias dps="docker ps --format 'table {{.ID}}\t{{.Names}}\t{{.RunningFor}}\t{{.Status}}\t{{.Ports}}'"
 alias dtop="docker ps --format '{{.Names}}' | xargs docker stats $1"
-alias dcup="dc up -d && dc logs -f --tail 10"
-alias dcres="dc restart && dc logs -f --tail 10"
+alias dlog="dc logs -f --tail 100"
+alias dlog0="dc logs -f --tail 0"
+
+alias ungz="gunzip -k"
