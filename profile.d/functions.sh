@@ -8,18 +8,18 @@ esac
 
 
 # Create a new directory and enter it
-function md() {
+function md {
 	mkdir -p "$@" && cd "$@"
 }
 
 
 # find shorthand
-function f() {
+function f {
 	find . -name "$1" 2>&1 | grep -v 'Permission denied'
 }
 
 # List all files, long format, colorized, permissions in octal
-function la(){
+function la {
  	lsa -l  "$@" | awk '
     {
       k=0;
@@ -32,7 +32,7 @@ function la(){
 }
 
 # git commit browser. needs fzf
-log() {
+function log {
   git log --graph --color=always \
       --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
   fzf --ansi --no-sort --reverse --tiebreak=index --toggle-sort=\` \
@@ -42,7 +42,7 @@ log() {
 }
 
 # get gzipped size
-function gz() {
+function gz {
 	echo "orig size    (bytes): "
 	cat "$1" | wc -c
 	echo "gzipped size (bytes): "
@@ -50,7 +50,7 @@ function gz() {
 }
 
 # whois a domain or a URL
-function whois() {
+function whois {
 	local domain=$(echo "$1" | awk -F/ '{print $3}') # get domain from URL
 	if [ -z $domain ] ; then
 		domain=$1
@@ -63,8 +63,8 @@ function whois() {
 	/usr/bin/whois -h whois.internic.net $domain | sed '/NOTICE:/q'
 }
 
-function localip(){
-	function _localip(){ echo "📶  "$(ipconfig getifaddr "$1"); }
+function localip {
+	function _localip { echo "📶  "$(ipconfig getifaddr "$1"); }
 	export -f _localip
 	local purple="\x1B\[35m" reset="\x1B\[m"
 	networksetup -listallhardwareports | \
@@ -75,13 +75,13 @@ function localip(){
 }
 
 # preview csv files. source: http://stackoverflow.com/questions/1875305/command-line-csv-viewer
-function csvpreview(){
+function csvpreview {
   sed 's/,,/, ,/g;s/,,/, ,/g' "$@" | column -s, -t | less -#2 -N -S
 }
 
 # Extract archives - use: extract <file>
 # Based on http://dotfiles.org/~pseup/.bashrc
-function extract() {
+function extract {
 	if [ -f "$1" ] ; then
 		local filename=$(basename "$1")
 		local foldername="${filename%%.*}"
@@ -117,7 +117,7 @@ function extract() {
 }
 
 # who is using the laptop's iSight camera?
-camerausedby() {
+function camerausedby {
 	echo "Checking to see who is using the iSight camera… 📷"
 	usedby=$(lsof | grep -w "AppleCamera\|USBVDC\|iSight" | awk '{printf $2"\n"}' | xargs ps)
 	echo -e "Recent camera uses:\n$usedby"
@@ -126,7 +126,7 @@ camerausedby() {
 
 # animated gifs from any video
 # from alex sexton   gist.github.com/SlexAxton/4989674
-gifify() {
+function gifify {
   if [[ -n "$1" ]]; then
 	if [[ $2 == '--good' ]]; then
 	  ffmpeg -i $1 -r 10 -vcodec png out-static-%05d.png
@@ -142,11 +142,11 @@ gifify() {
 
 # turn that video into webm.
 # brew reinstall ffmpeg --with-libvpx
-webmify(){
+function webmify {
 	ffmpeg -i $1 -vcodec libvpx -acodec libvorbis -isync -copyts -aq 80 -threads 3 -qmax 30 -y $2 $1.webm
 }
 
 # direct it all to /dev/null
-function nullify() {
+function nullify {
   "$@" >/dev/null 2>&1
 }
