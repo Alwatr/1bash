@@ -150,3 +150,17 @@ function webmify {
 function nullify {
   "$@" >/dev/null 2>&1
 }
+
+function dns-fast {
+cat << EOF > /etc/resolv.conf
+nameserver 1.1.1.1
+nameserver 8.8.8.8
+EOF
+}
+
+function dns-hack {
+cat << EOF > /etc/resolv.conf
+nameserver 178.22.122.100
+nameserver 94.232.174.194
+EOF
+}
