@@ -55,8 +55,6 @@ alias lsd="ls | grep '^d'" # only directories
 # Recursively delete `.DS_Store` files
 alias clean_ds_store="find . -name '*.DS_Store' -type f -ls -delete"
 
-alias diskspace="df -P -kHl"
-
 # Shortcuts
 alias a="apt"
 alias ai="apt install -y"
@@ -66,7 +64,6 @@ alias n="nano"
 alias l="lsa"
 alias r="rsync -aPzh"
 alias rd="rsync -aPzh --delete"
-alias ds="diskspace"
 
 alias d="docker"
 alias dc="docker-compose"
