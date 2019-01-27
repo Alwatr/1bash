@@ -69,7 +69,6 @@ alias d="docker"
 alias dc="docker-compose"
 alias dps="docker ps --format 'table {{.ID}}\t{{.Names}}\t{{.RunningFor}}\t{{.Status}}\t{{.Ports}}'"
 alias dtop="docker ps --format '{{.Names}}' | xargs docker stats $1"
-alias dlog="dc logs -f --tail 100"
-alias dlog0="dc logs -f --tail 0"
+alias dclog="dc logs -f --tail"
 
 alias ungz="gunzip -k"
