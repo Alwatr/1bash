@@ -24,8 +24,12 @@ alias where=which # sometimes i forget
 # export CLICOLOR_FORCE=1
 
 # ls options: A = include hidden (but not . or ..), F = put `/` after folders, h = byte unit suffixes
-alias lsa="ls -lAhF --group-directories-first"
-alias lsd="ls | grep '^d'" # only directories
+if lsa --group-directories-first > /dev/null 2>&1; then # GNU `ls`
+    alias lsa="ls -lAhF --group-directories-first"
+else # OS X `ls`
+    alias lsa="ls -lAhF"
+fi
+alias lsd="ls | grep --color=never '^d'" # only directories
 # `la` defined in .functions
 
 # `cat` with beautiful colors. requires: sudo easy_install -U Pygments

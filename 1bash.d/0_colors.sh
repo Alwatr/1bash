@@ -6,7 +6,12 @@ elif [ -f $ONE_BASH/dircolors ]; then
   eval "$( dircolors -b $ONE_BASH/dircolors )"
 fi
 
-if ls --color=auto > /dev/null 2>&1; then colorflag="--color=auto"; else colorflag="-G"; fi;
+# Detect which `ls` flavor is in use
+if ls --color > /dev/null 2>&1; then # GNU `ls`
+	colorflag="--color"
+else # OS X `ls`
+	colorflag="-G"
+fi
 
 # enable color support of ls and also add handy aliases
 alias ls='ls $colorflag'

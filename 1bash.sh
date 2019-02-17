@@ -26,7 +26,3 @@ for i in $ONE_BASH/1bash.d/*.sh; do
   fi
 done
 unset i
-
-if ! shopt -oq posix; then
-  lsa
-fi

@@ -11,4 +11,9 @@ if [ "$BASH" ]; then
   # if [ -f ~/.bashrc ]; then
   #   . ~/.bashrc
   # fi
+
+  # if ! shopt -oq posix; then
+  #   cd /srv
+  #   lsa
+  # fi
 fi
