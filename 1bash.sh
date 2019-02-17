@@ -17,6 +17,7 @@ fi
 
 if [ ! -d "$ONE_BASH/1bash.d" ]; then
   echo "$ONE_BASH/1bash.d not found"
+  return
 fi
 
 for i in $ONE_BASH/1bash.d/*.sh; do
@@ -27,6 +28,5 @@ done
 unset i
 
 if ! shopt -oq posix; then
-  cd /
-  l
+  lsa
 fi

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Make your own logo and put it in ~/1bash_logo.txt
+# Make your own logo and put it in ~/.1bash_logo
 # http://patorjk.com/software/taag
 
 if [ -f ~/.1bash_logo ]; then

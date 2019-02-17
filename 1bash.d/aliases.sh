@@ -25,8 +25,8 @@ alias where=which # sometimes i forget
 # export CLICOLOR_FORCE=1
 
 # ls options: A = include hidden (but not . or ..), F = put `/` after folders, h = byte unit suffixes
-alias lsa="ls -lAhF --group-directories-first"
-alias lsd="ls | grep '^d'" # only directories
+alias lsa="ls -lAhF --color=auto --group-directories-first"
+alias lsd="ls --color=auto | grep '^d'" # only directories
 # `la` defined in .functions
 ###
 
@@ -66,3 +66,5 @@ alias ungz="gunzip -k"
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
+
+# more https://github.com/algotech/dotaliases
