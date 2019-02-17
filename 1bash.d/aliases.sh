@@ -1,11 +1,5 @@
 #!/bin/bash
 
-# If not running interactively, don't do anything
-case $- in
-    *i*) ;;
-      *) return;;
-esac
-
 export EDITOR="nano"
 
 # Easier navigation: .., ..., ~ and -
@@ -18,24 +12,20 @@ alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
 # mv, rm, cp
+# -v is very slow over ssh for huge files and slow connection
+alias rm="rm -i"
 # alias mv="mv -v"
-# alias rm="rm -i -v"
 # alias cp="cp -v"
 
 alias where=which # sometimes i forget
 
-###
-# time to upgrade `ls`
-
-# use coreutils `ls` if possible…
-#hash gls >/dev/null 2>&1 || alias gls="ls"
-
+# ls make colerfull in color.sh
 # always use color, even when piping (to awk,grep,etc)
-if ls --color=auto > /dev/null 2>&1; then colorflag="--color=auto"; else colorflag="-G"; fi;
-export CLICOLOR_FORCE=1
+# if ls --color=auto > /dev/null 2>&1; then colorflag="--color=auto"; else colorflag="-G"; fi;
+# export CLICOLOR_FORCE=1
 
 # ls options: A = include hidden (but not . or ..), F = put `/` after folders, h = byte unit suffixes
-alias lsa="ls -lAhF ${colorflag} --group-directories-first"
+alias lsa="ls -lAhF --group-directories-first"
 alias lsd="ls | grep '^d'" # only directories
 # `la` defined in .functions
 ###
@@ -72,3 +62,7 @@ alias dtop="docker ps --format '{{.Names}}' | xargs docker stats $1"
 alias dclog="dc logs -f --tail"
 
 alias ungz="gunzip -k"
+
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi

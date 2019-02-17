@@ -1,12 +1,5 @@
 #!/bin/bash
 
-# If not running interactively, don't do anything
-case $- in
-    *i*) ;;
-      *) return;;
-esac
-
-
 # Create a new directory and enter it
 function md {
 	mkdir -p "$@" && cd "$@"
@@ -32,7 +25,7 @@ function la {
 }
 
 # git commit browser. needs fzf
-function log {
+function glog {
   git log --graph --color=always \
       --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
   fzf --ansi --no-sort --reverse --tiebreak=index --toggle-sort=\` \

@@ -1,29 +1,28 @@
-[user]
-  name = Server Root Name
-  email = root@server.io
+# [user]
+#   name = Ali Mihandoost
+#   email = ali@mihandoost.com
 
 [alias]
   c = commit -m
   ca = commit -am
   cl = clone
+  cl1 = clone --depth=1
   pl = pull
   p = push
   pa = push --all
   pt = push --tags
+  b = branch
+  bd = push origin --delete
   s = status -s
   m = merge
-  b = branch
-  r = reset
-  bd = push origin --delete
-  sclone = clone --depth=1
+  r = rebase
+  rs = reset
   co = checkout
-  df = diff --color --color-words --abbrev
-  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
-
+  d = diff --color --color-words --abbrev
+  l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
   # Show the diff between the latest commit and the current state
-  d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
-
-  reup = rebase-update # depot_tools specific
+  df = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+  ru = rebase-update # depot_tools specific
 
   hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
   type = cat-file -t
@@ -38,6 +37,7 @@
 # so much color
 [color]
   ui = always
+
 [color "diff"]
   meta = yellow bold
   commit = green bold
@@ -45,15 +45,18 @@
   old = red bold
   new = green bold
   whitespace = red reverse
+
 [color "diff-highlight"]
   oldNormal = red bold
   oldHighlight = "red bold 52"
   newNormal = "green bold"
   newHighlight = "green bold 22"
+
 [color "branch"]
   current = yellow reverse
   local = yellow
   remote = green
+
 [color "status"]
   added = yellow
   changed = green
