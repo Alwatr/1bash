@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 if [ -f ~/.dircolors ]; then
@@ -7,10 +6,12 @@ elif [ -f $ONE_BASH/dircolors ]; then
   eval "$( dircolors -b $ONE_BASH/dircolors )"
 fi
 
+if ls --color=auto > /dev/null 2>&1; then colorflag="--color=auto"; else colorflag="-G"; fi;
+
 # enable color support of ls and also add handy aliases
-# alias ls='ls --color=auto'
-alias dir='dir --color=auto'
-alias vdir='vdir --color=auto'
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
+alias ls='ls $colorflag'
+alias dir='dir $colorflag'
+alias vdir='vdir $colorflag'
+alias grep='grep $colorflag'
+alias fgrep='fgrep $colorflag'
+alias egrep='egrep $colorflag'

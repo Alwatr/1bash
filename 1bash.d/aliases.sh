@@ -21,20 +21,15 @@ alias where=which # sometimes i forget
 
 # ls make colerfull in color.sh
 # always use color, even when piping (to awk,grep,etc)
-# if ls --color=auto > /dev/null 2>&1; then colorflag="--color=auto"; else colorflag="-G"; fi;
 # export CLICOLOR_FORCE=1
 
 # ls options: A = include hidden (but not . or ..), F = put `/` after folders, h = byte unit suffixes
-alias lsa="ls -lAhF --color=auto --group-directories-first"
-alias lsd="ls --color=auto | grep '^d'" # only directories
+alias lsa="ls -lAhF --group-directories-first"
+alias lsd="ls | grep '^d'" # only directories
 # `la` defined in .functions
-###
-
 
 # `cat` with beautiful colors. requires: sudo easy_install -U Pygments
 #alias c="pygmentize -O style=monokai -f console256 -g"
-
-###
 
 # Networking. IP address, dig, DNS
 # alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
