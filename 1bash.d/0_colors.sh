@@ -1,9 +1,11 @@
 #!/bin/bash
 
-if [ -f ~/.dircolors ]; then
-  eval "$( dircolors -b ~/.dircolors )"
-elif [ -f $ONE_BASH/dircolors ]; then
-  eval "$( dircolors -b $ONE_BASH/dircolors )"
+if type dircolors > /dev/null 2>&1; then
+  if [ -f ~/.dircolors ]; then
+    eval "$( dircolors -b ~/.dircolors )"
+  elif [ -f $ONE_BASH/dircolors ]; then
+    eval "$( dircolors -b $ONE_BASH/dircolors )"
+  fi
 fi
 
 # Detect which `ls` flavor is in use
