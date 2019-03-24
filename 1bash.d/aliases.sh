@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export EDITOR="nano"
+#export EDITOR="nano"
 
 # Easier navigation: .., ..., ~ and -
 alias ..="cd .."
@@ -49,8 +49,10 @@ alias a="apt"
 alias ai="apt install -y"
 alias g="git"
 alias v="vim"
+alias vi="vim"
 alias n="nano"
 alias l="lsa"
+alias p="ping"
 alias r="rsync -aPzh"
 alias rd="rsync -aPzh --delete"
 
