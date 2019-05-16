@@ -11,8 +11,11 @@ git clone https://github.com/AliMD/1bash.git $ONE_BASH
 
 # copy user config
 cp -av $ONE_BASH/inputrc ~/.inputrc
-cp -av $ONE_BASH/profile ~/.profile
+cp -av $ONE_BASH/bash_profile ~/.bash_profile
 cp -aiv $ONE_BASH/gitconfig ~/.gitconfig
+
+# Edit yout name/email in git config
+nano ~/.gitconfig
 ```
 
 ## Customize Logo
