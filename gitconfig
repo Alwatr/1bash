@@ -1,23 +1,26 @@
 # [user]
 #   name = Ali Mihandoost
-#   email = ali@mihandoost.com
+#   email = alimihandoost@gmail.com
 
 [alias]
   c = commit -m
   ca = commit -am
   cl = clone
   cl1 = clone --depth=1
-  pl = pull
+  pl = pull --prune --progress --autostash
   p = push
+  pp = push --prune
   pa = push --all
   pt = push --tags
   b = branch
+  ba = branch -avv
   bd = push origin --delete
   s = status -s
   m = merge
   r = rebase
   rs = reset
   co = checkout
+  f = flow
   d = diff --color --color-words --abbrev
   l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
   # Show the diff between the latest commit and the current state
