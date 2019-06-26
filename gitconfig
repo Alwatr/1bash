@@ -7,7 +7,7 @@
   ca = commit -am
   cl = clone
   cl1 = clone --depth=1
-  pl = pull --prune --progress --autostash
+  pl = pull --prune --progress --autostash --rebase
   p = push
   pp = push --prune
   pa = push --all
