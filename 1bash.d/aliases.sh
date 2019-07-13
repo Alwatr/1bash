@@ -3,19 +3,19 @@
 #export EDITOR="nano"
 
 # Easier navigation: .., ..., ~ and -
-alias ..="cd .."
-alias cd..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
-alias ~="cd ~" # `cd` is probably faster to type though
-alias -- -="cd -"
+alias ..='cd ..'
+alias cd..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ~='cd ~' # `cd` is probably faster to type though
+alias -- -='cd -'
 
 # mv, rm, cp
 # -v is very slow over ssh for huge files and slow connection
-alias rm="rm -i"
-# alias mv="mv -v"
-# alias cp="cp -v"
+alias rm='rm -i'
+# alias mv='mv -v'
+# alias cp='cp -v'
 
 alias where=which # sometimes i forget
 
@@ -25,9 +25,9 @@ alias where=which # sometimes i forget
 
 # ls options: A = include hidden (but not . or ..), F = put `/` after folders, h = byte unit suffixes
 if lsa --group-directories-first > /dev/null 2>&1; then # GNU `ls`
-    alias lsa="ls -lAhF --group-directories-first"
+    alias lsa='ls -lAhF --group-directories-first'
 else # OS X `ls`
-    alias lsa="ls -lAhF"
+    alias lsa='ls -lAhF'
 fi
 alias lsd="ls | grep --color=never '^d'" # only directories
 # `la` defined in .functions
@@ -45,24 +45,26 @@ alias lsd="ls | grep --color=never '^d'" # only directories
 alias clean_ds_store="find . -name '*.DS_Store' -type f -ls -delete"
 
 # Shortcuts
-alias a="apt"
-alias ai="apt install -y"
-alias g="git"
-alias v="vim"
-alias vi="vim"
-alias n="nano"
-alias l="lsa"
-alias p="ping"
-alias r="rsync -aPzh"
-alias rd="rsync -aPzh --delete"
+alias a='apt'
+alias ai='apt install -y'
+alias g='git'
+alias v='vim'
+alias vi='vim'
+alias n='nano'
+alias l='lsa'
+alias p='ping'
+alias r='rsync -aPzh'
+alias rd='rsync -aPzh --delete'
 
-alias d="docker"
-alias dc="docker-compose"
+alias d='docker'
+alias dc='docker-compose'
 alias dps="docker ps --format 'table {{.ID}}\t{{.Names}}\t{{.RunningFor}}\t{{.Status}}\t{{.Ports}}'"
 alias dtop="docker ps --format '{{.Names}}' | xargs docker stats $1"
-alias dclog="dc logs -f --tail"
+alias dclog='dc logs -f --tail'
 
-alias ungz="gunzip -k"
+alias k='kubectl'
+
+alias ungz='gunzip -k'
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
