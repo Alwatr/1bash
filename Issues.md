@@ -16,4 +16,4 @@
     - ai
 
 ## Prompt
-- The user prompt can not fetch user properly on windows machines, this issue has been resolved by adding a check on USER variable length in [prompt.sh](1bashd/prompt.sh)
+- The user prompt can not fetch user properly on windows machines, this issue has been resolved by adding a check on USER variable length in [prompt.sh](/1bashd/prompt.sh)
