@@ -13,7 +13,7 @@ then
 
   if ssh-add -l > /dev/null
   then
-    echo 'ssh agent identify key is loaded!'
+    echo 'SSH agent identify key is loaded!'
   else
     if [ ! -z $SSH_AGENT_PID ]
     then
