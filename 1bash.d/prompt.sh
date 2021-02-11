@@ -69,6 +69,10 @@ set_prompts() {
     # Only show username/host if not default
     function usernamehost() {
 
+        if [[ -z "$USER" ]]; then
+            USER=$(whoami);
+        fi;
+
         # Highlight the user name when logged in as root.
         if [[ "${USER}" == *"root" ]]; then
             userStyle="${red}";
