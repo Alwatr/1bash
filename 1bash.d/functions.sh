@@ -72,6 +72,12 @@ function csvpreview {
   sed 's/,,/, ,/g;s/,,/, ,/g' "$@" | column -s, -t | less -#2 -N -S
 }
 
+# get public ip information
+function publicip {
+	curl -s ipinfo.io
+}
+
+
 # Extract archives - use: extract <file>
 # Based on http://dotfiles.org/~pseup/.bashrc
 function extract {
