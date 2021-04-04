@@ -26,28 +26,28 @@ set_prompts() {
 
     local dateCmd=""
 
-    if [ -x /usr/bin/tput ] && tput setaf 1 &> /dev/null; then
+    # if [ -x /usr/bin/tput ] && tput setaf 1 &> /dev/null; then
 
-        tput sgr0 # Reset colors
+    #     tput sgr0 # Reset colors
 
-        bold=$(tput bold)
-        reset=$(tput sgr0)
+    #     bold=$(tput bold)
+    #     reset=$(tput sgr0)
 
-        # Solarized colors
-        # (https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized#the-values)
-        black=$(tput setaf 0)
-        blue=$(tput setaf 33)
-        cyan=$(tput setaf 37)
-        green=$(tput setaf 190)
-        orange=$(tput setaf 172)
-        purple=$(tput setaf 141)
-        red=$(tput setaf 124)
-        violet=$(tput setaf 61)
-        magenta=$(tput setaf 9)
-        white=$(tput setaf 8)
-        yellow=$(tput setaf 136)
+    #     # Solarized colors
+    #     # (https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized#the-values)
+    #     black=$(tput setaf 0)
+    #     blue=$(tput setaf 33)
+    #     cyan=$(tput setaf 37)
+    #     green=$(tput setaf 190)
+    #     orange=$(tput setaf 172)
+    #     purple=$(tput setaf 141)
+    #     red=$(tput setaf 124)
+    #     violet=$(tput setaf 61)
+    #     magenta=$(tput setaf 9)
+    #     white=$(tput setaf 8)
+    #     yellow=$(tput setaf 136)
 
-    else
+    # else
 
         bold=""
         reset="\e[0m"
@@ -64,7 +64,7 @@ set_prompts() {
         white="\e[1;37m"
         yellow="\e[1;33m"
 
-    fi
+    # fi
 
     # Only show username/host if not default
     function usernamehost() {
