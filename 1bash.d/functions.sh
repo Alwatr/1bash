@@ -163,3 +163,9 @@ nameserver 178.22.122.100
 nameserver 94.232.174.194
 EOF
 }
+
+# network speed test
+function speedtest {
+	curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -
+}
+
