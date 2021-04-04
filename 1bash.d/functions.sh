@@ -169,3 +169,26 @@ function speedtest {
 	curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -
 }
 
+# completion prompt
+function complete {
+	case $1 in 
+	-h)
+	echo "pass argument (docker, docker-compose, git, kubectl, git-flow) for completion";;
+	docker)
+	source /c/Users/mohammad.kahani/1bash/1bash.d/completion.d/docker 
+	echo "docker done!" ;;
+	docker-compose)
+	source /c/Users/mohammad.kahani/1bash/1bash.d/completion.d/docker-compose 
+	echo "docker-compose done!" ;;
+	git)
+	source /c/Users/mohammad.kahani/1bash/1bash.d/completion.d/git 
+	echo "git done!" ;;
+	git-flow)
+	source /c/Users/mohammad.kahani/1bash/1bash.d/completion.d/git-flow 
+	echo "git-flow done!" ;;
+	kubectl)
+	source /c/Users/mohammad.kahani/1bash/1bash.d/completion.d/kubectl 
+	echo "kubectl done!" ;;
+	esac
+}
+
