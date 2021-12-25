@@ -45,6 +45,7 @@ alias lsd="ls | grep --color=never '^d'" # only directories
 alias clean_ds_store="find . -name '*.DS_Store' -type f -ls -delete"
 
 # Shortcuts
+alias s='sudo'
 alias a='apt'
 alias ai='apt install -y'
 alias g='git'
