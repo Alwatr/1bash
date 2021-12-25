@@ -58,6 +58,7 @@ alias n='nano'
 alias y='yarn'
 alias l='lsa'
 alias p='ping'
+alias pc='ping 1.1.1.1'
 alias r='rsync -aPzh'
 alias rd='rsync -aPzh --delete'
 
