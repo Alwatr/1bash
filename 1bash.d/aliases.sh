@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#export EDITOR="nano"
+# export EDITOR="nano"
 
 # Easier navigation: .., ..., ~ and -
 alias ..='cd ..'
@@ -33,7 +33,7 @@ alias lsd="ls | grep --color=never '^d'" # only directories
 # `la` defined in .functions
 
 # `cat` with beautiful colors. requires: sudo easy_install -U Pygments
-#alias c="pygmentize -O style=monokai -f console256 -g"
+# alias c="pygmentize -O style=monokai -f console256 -g"
 
 # Networking. IP address, dig, DNS
 # alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
