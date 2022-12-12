@@ -1,13 +1,14 @@
-# [user]
+[user]
 #   name = Ali Mihandoost
-#   email = alimihandoost@gmail.com
+#   email = ali.mihandoost@gmail.com
 
 [alias]
   c = commit -m
   ca = commit -am
   cl = clone
   cl1 = clone --depth=1
-  pl = pull --prune --progress --autostash --rebase
+  pl = pull --prune --progress --autostash
+  plr = pull --prune --progress --autostash --rebase
   p = push
   pp = push --prune
   pa = push --all
@@ -20,12 +21,15 @@
   r = rebase
   rs = reset
   co = checkout
+  sw = switch
   f = flow
+  chp = cherry-pick
   d = diff --color --color-words --abbrev
   l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
   # Show the diff between the latest commit and the current state
   df = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
   ru = rebase-update # depot_tools specific
+  t = tag -ln3
 
   hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
   type = cat-file -t
@@ -36,6 +40,9 @@
 
 [push]
   default = current
+
+[pull]
+  rebase = false
 
 # so much color
 [color]
@@ -65,5 +72,23 @@
   changed = green
   untracked = cyan
 
+#[http]
+#  sslVerify = false
+
 # [credential]
-#   helper = store
+#   helper = manager
+
+[core]
+  autocrlf = input
+
+[init]
+  defaultBranch = main
+
+#[commit]
+#	gpgsign = true
+
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
