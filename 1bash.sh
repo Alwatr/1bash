@@ -20,9 +20,9 @@ if [ ! -d "$oneBash/1bash.d" ]; then
   return
 fi
 
-for i in $oneBash/1bash.d/**.sh; do
+for i in $oneBash/1bash.d/*.sh; do
   if [ -r "$i" ]; then
-  . "$i"
+    . "$i"
   fi
 done
 unset i
