@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ "$BASH" ]; then
-  export ONE_BASH=~/1bash
+  export ONE_BASH=~/.1bash
 
   if [ -f $ONE_BASH/1bash.sh ]; then
     . $ONE_BASH/1bash.sh

@@ -12,7 +12,7 @@ case $- in
 esac
 
 if [ -z "$ONE_BASH" ]; then
-  export ONE_BASH=~/1bash
+  export ONE_BASH='~/.1bash'
 fi
 
 if [ ! -d "$ONE_BASH/1bash.d" ]; then
