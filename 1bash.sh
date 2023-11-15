@@ -26,3 +26,7 @@ for i in $oneBash/1bash.d/**.sh; do
   fi
 done
 unset i
+
+if [ -r "$oneBash/secret.env" ]; then
+  source $oneBash/secret.env
+fi
