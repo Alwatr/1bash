@@ -173,3 +173,8 @@ function gsep() {
 function random() {
 	openssl rand -hex 32 | pbcopy
 }
+
+# reload bash
+function reload() {
+	source ~/.bash_profile
+}
