@@ -23,9 +23,7 @@ function createSymlink() {
     mv $destinationFile $backupDir/
   fi
 
-  if [ ! -e "$destinationFile" ]; then
-    ln -s $sourceFile $destinationFile
-  fi
+  ln -svf $sourceFile $destinationFile
 }
 
 # ---
