@@ -1,38 +1,25 @@
-# 1Bash v2.0
+# 1Bash v3.0
 
-Linux Bash Customization, AliMD Edition ;)
+Linux Bash Customization.
 
 ## Install
 
 ```bash
-# clone project
-export ONE_BASH=~/1bash
-git clone https://github.com/AliMD/1bash.git $ONE_BASH
-
-# copy user config
-cp -av $ONE_BASH/inputrc ~/.inputrc
-cp -av $ONE_BASH/bash_profile ~/.bash_profile
-cp -aiv $ONE_BASH/gitconfig ~/.gitconfig
-
-# Edit yout name/email in git config
-nano ~/.gitconfig
+bash <(curl -s https://raw.githubusercontent.com/njfamirm/1bash/main/setup.sh)
 ```
 
 ## Customize Logo
 
-Put your logo or any welcome message in `~/.1bash_logo`.
+Put your logo or any welcome message in `$oneBash/logo.txt`.
 
 ```bash
-nano ~/.1bash_logo
+vim $oneBash/logo.txt
 ```
 
 [Generate your own logo](http://patorjk.com/software/taag)
 
 ## Upgrade
 
-Just pull the 1bash git repository.
-
 ```bash
-cd $ONE_BASH
-g pl
+bash ~/.1bash/setup.sh
 ```
