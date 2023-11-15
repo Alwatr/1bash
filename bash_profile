@@ -1,10 +1,10 @@
 #!/bin/bash
 
 if [ "$BASH" ]; then
-  export ONE_BASH=~/.1bash
+  export oneBash=~/.1bash
 
-  if [ -f $ONE_BASH/1bash.sh ]; then
-    . $ONE_BASH/1bash.sh
+  if [ -f $oneBash/1bash.sh ]; then
+    . $oneBash/1bash.sh
   fi
 
   # Uncoment the following lines if you want to load ~/.bashrc too

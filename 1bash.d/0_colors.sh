@@ -3,8 +3,8 @@
 if type dircolors > /dev/null 2>&1; then
   if [ -f ~/.dircolors ]; then
     eval "$( dircolors -b ~/.dircolors )"
-  elif [ -f $ONE_BASH/dircolors ]; then
-    eval "$( dircolors -b $ONE_BASH/dircolors )"
+  elif [ -f $oneBash/dircolors ]; then
+    eval "$( dircolors -b $oneBash/dircolors )"
   fi
 fi
 
