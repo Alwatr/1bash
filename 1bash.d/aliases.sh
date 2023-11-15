@@ -54,7 +54,6 @@ alias ungz='gunzip -k'
 alias df='df -h'
 alias mkdir="mkdir -p"
 alias c="printf '\33c\e[3J'"
-alias ls="ls -ltrhA"
 alias co="code ."
 alias imgo="open -a ImageOptim"
 alias chrome-cors="open -n -a /Applications/Google\ Chrome\ Beta.app/Contents/MacOS/Google\ Chrome\ Beta --args --user-data-dir="$HOME/chrome-profile" --disable-web-security"
