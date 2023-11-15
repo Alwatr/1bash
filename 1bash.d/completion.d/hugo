@@ -1,0 +1,4 @@
+if command -v hugo >/dev/null 2>&1
+then
+  source <(hugo completion bash)
+fi

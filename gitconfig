@@ -7,8 +7,8 @@
   ca = commit -am
   cl = clone
   cl1 = clone --depth=1
-  pl = pull --prune --progress --autostash
-  plr = pull --prune --progress --autostash --rebase
+  pl = pull --prune --progress --autostash --rebase=true
+  plm = pull --prune --progress --autostash --rebase=false
   p = push
   pp = push --prune
   pa = push --all
@@ -17,14 +17,22 @@
   ba = branch -avv
   bd = push origin --delete
   s = status -s
+  st = stash -u
+  sp = stash pop
   m = merge
   r = rebase
-  rs = reset
+  rc = rebase --continue
+  ra = rebase --abort
+  rs = rebase --skip
   co = checkout
+  rh = reset --hard
   sw = switch
-  f = flow
+  f = fetch
   chp = cherry-pick
   d = diff --color --color-words --abbrev
+  rn = !"git pl && git rebase origin/${1:-next} && git push -f #"
+  feat = !"git fetch && git switch -c feat/$1 origin/next && git push -u #"
+  sep = !"git fetch && git switch -c feat/$1 origin/next && shift && git cherry-pick $@ && git push -u && gh pr create --assignee @me --base next --fill --web #"
   l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
   # Show the diff between the latest commit and the current state
   df = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
@@ -84,8 +92,8 @@
 [init]
   defaultBranch = main
 
-#[commit]
-#	gpgsign = true
+# [commit]
+# 	gpgsign = true
 
 [filter "lfs"]
 	process = git-lfs filter-process

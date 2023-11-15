@@ -157,3 +157,22 @@ nameserver 178.22.122.100
 nameserver 94.232.174.194
 EOF
 }
+
+function ffm {
+  ffmpeg "${@:1:$#-1}" -map_metadata 0 -strict experimental -movflags +faststart -benchmark "${!#}"
+}
+
+function convert2mp4 {
+	input="$1"; shift;
+  ffm -i "$input" -c:v libx264 -c:a aac -q:a 0.5 $@ "${input}.mp4"
+}
+
+function convert2m4a {
+	input="$1"; shift;
+
+	echo "Convert (-c:a aac -q:a 0.5 -ar 22050)"
+  ffm -i "$input" -vn -c:a aac -q:a 0.5 -ar 22050 $@ "${input}.m4a"
+
+	echo "Convert (-c:a aac -q:a 1)"
+  ffm -i "$input" -vn -c:a aac -q:a 1 $@ "${input}-HQ.m4a"
+}
