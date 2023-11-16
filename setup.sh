@@ -4,8 +4,8 @@ set -Eeuo pipefail
 
 clear
 
-ONE_BASH="$HOME/.1bash"
-ONE_BASH_REPO_URL='https://github.com/Alwatr/1bash'
+ONE_BASH="$HOME/1bash"
+ONE_BASH_REPO_URL=https://github.com/Alwatr/1bash
 ONE_BASH_BRANCH=main
 BACKUP_DIR="$ONE_BASH/backup"
 
