@@ -1,8 +1,10 @@
 #!/bin/bash
 
 # Create a new directory and enter it
+# TODO: on multiple arguments, cd encounters an error, number of arguments should be reduced
 function md {
-	mkdir -p "$@" && cd "$@"
+	# mkdir -p "$@" && cd "$@"
+	mkdir -p "$@" && cd "$1"
 }
 
 
@@ -12,6 +14,7 @@ function f {
 }
 
 # List all files, long format, colorized, permissions in octal
+# TODO: Problem with symlinks, targets are not shown
 function la {
  	lsa -l  "$@" | awk '
     {
@@ -69,7 +72,7 @@ function localip {
 
 # preview csv files. source: http://stackoverflow.com/questions/1875305/command-line-csv-viewer
 function csvpreview {
-  sed 's/,,/, ,/g;s/,,/, ,/g' "$@" | column -s, -t | less -#2 -N -S
+  sed 's/,,/, ,/g;s/,,/, ,/g' "$@" | column -s, -t | less -#2 -N -S | cat
 }
 
 # Extract archives - use: extract <file>
