@@ -158,6 +158,8 @@ nameserver 94.232.174.194
 EOF
 }
 
+# ffmpeg
+
 function ffm {
   ffmpeg "${@:1:$#-1}" -map_metadata 0 -strict experimental -movflags +faststart -benchmark "${!#}"
 }
@@ -175,4 +177,12 @@ function convert2m4a {
 
 	echo "Convert (-c:a aac -q:a 1)"
   ffm -i "$input" -vn -c:a aac -q:a 1 $@ "${input}-HQ.m4a"
+}
+
+function clean_ds_store() {
+	find . -name '*.DS_Store' -type f -ls -delete
+}
+
+function random() {
+	openssl rand -hex 32
 }
