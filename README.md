@@ -5,14 +5,12 @@ Linux Bash Customization, AliMD Edition ;)
 ## Install
 
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/Alwatr/1bash/v2.3.0/setup.sh)
-```
+export ONE_BASH="$HOME/1bash"
+export ONE_BASH_REPO_URL="https://github.com/Alwatr/1bash"
+export ONE_BASH_REF="main"
+bash <(curl -s "https://raw.githubusercontent.com/Alwatr/1bash/main/setup.sh")
 
-Change repository or branch
-
-```bash
-export ONE_BASH_REPO_URL=https://github.com/Alwatr/1bash
-export ONE_BASH_BRANCH=main
+vim ~/.gitconfig
 ```
 
 ## Customize Logo

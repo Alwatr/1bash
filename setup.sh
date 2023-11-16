@@ -4,9 +4,9 @@ set -Eeuo pipefail
 
 clear
 
-ONE_BASH="$HOME/1bash"
-ONE_BASH_REPO_URL=https://github.com/Alwatr/1bash
-ONE_BASH_BRANCH=main
+ONE_BASH=${ONE_BASH:-"$HOME/1bash"}
+ONE_BASH_REPO_URL=${ONE_BASH_REPO_URL:-"https://github.com/Alwatr/1bash"}
+ONE_BASH_REF=${ONE_BASH_REF:-"main"}
 BACKUP_DIR="$ONE_BASH/backup"
 
 function echoStep() {
@@ -39,7 +39,7 @@ if [ -d "$ONE_BASH" ]; then
   git pull --prune --progress --autostash --rebase
 else
   echo '✌🏻 1bash does not exist, cloning...'
-  git clone -b $ONE_BASH_BRANCH $ONE_BASH_REPO_URL $ONE_BASH
+  git clone -b $ONE_BASH_REF $ONE_BASH_REPO_URL $ONE_BASH
 fi
 
 # Create symbolic links
