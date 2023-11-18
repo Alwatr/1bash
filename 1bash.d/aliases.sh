@@ -42,7 +42,6 @@ alias lsd="ls | grep --color=never '^d'" # only directories
 # alias wget="curl -O"
 
 # Recursively delete `.DS_Store` files
-alias clean_ds_store="find . -name '*.DS_Store' -type f -ls -delete"
 
 # Shortcuts
 alias a='apt'
@@ -56,16 +55,18 @@ alias l='lsa'
 alias p='ping'
 alias r='rsync -aPzh'
 alias rd='rsync -aPzh --delete'
+alias k='kubectl'
+alias ungz='gunzip -k'
+alias mkdir="mkdir -p"
+alias co="code ."
 
+# Docker aliases
 alias d='docker'
 alias dc='docker-compose'
 alias dps="docker ps --format 'table {{.ID}}\t{{.Names}}\t{{.RunningFor}}\t{{.Status}}\t{{.Ports}}'"
 alias dtop="docker ps --format '{{.Names}}' | xargs docker stats $1"
 alias dclog='dc logs -f --tail'
 
-alias k='kubectl'
-
-alias ungz='gunzip -k'
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases

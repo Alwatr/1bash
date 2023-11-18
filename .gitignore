@@ -8,3 +8,6 @@
 #Windows
 Thumbs.db
 Desktop.ini
+
+/backup
+/secret.env
