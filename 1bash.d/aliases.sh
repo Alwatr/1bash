@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#export EDITOR="nano"
+# export EDITOR="nano"
 
 # Easier navigation: .., ..., ~ and -
 alias ..='cd ..'
@@ -33,7 +33,7 @@ alias lsd="ls | grep --color=never '^d'" # only directories
 # `la` defined in .functions
 
 # `cat` with beautiful colors. requires: sudo easy_install -U Pygments
-#alias c="pygmentize -O style=monokai -f console256 -g"
+# alias c="pygmentize -O style=monokai -f console256 -g"
 
 # Networking. IP address, dig, DNS
 # alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -45,8 +45,12 @@ alias lsd="ls | grep --color=never '^d'" # only directories
 alias clean_ds_store="find . -name '*.DS_Store' -type f -ls -delete"
 
 # Shortcuts
+alias s='sudo'
 alias a='apt'
 alias ai='apt install -y'
+alias p='pacman'
+alias ps='pacman -S'
+alias pu='pacman -Syu'
 alias g='git'
 alias v='vim'
 alias vi='vim'
@@ -54,6 +58,7 @@ alias n='nano'
 alias y='yarn'
 alias l='lsa'
 alias p='ping'
+alias pc='ping 1.1.1.1'
 alias r='rsync -aPzh'
 alias rd='rsync -aPzh --delete'
 
