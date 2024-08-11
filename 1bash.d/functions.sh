@@ -176,3 +176,8 @@ function convert2m4a {
 	echo "Convert (-c:a aac -q:a 1)"
   ffm -i "$input" -vn -c:a aac -q:a 1 $@ "${input}-HQ.m4a"
 }
+
+function fix-permissions {
+	find "${1:-.}" -type d -exec chmod -vv 755 {} \;
+	find "${1:-.}" -type f -exec chmod -vv 644 {} \;
+}
