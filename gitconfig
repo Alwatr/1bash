@@ -1,22 +1,24 @@
 [user]
-#   name = Ali Mihandoost
-#   email = ali.mihandoost@gmail.com
+  # name = Ali Mihandoost
+  # email = ali.mihandoost@gmail.com
 
 [alias]
-  c = commit -m
-  ca = commit -am
-  cl = clone
-  cl1 = clone --depth=1
-  pl = pull --prune --progress --autostash --rebase=true
-  plm = pull --prune --progress --autostash --rebase=false
-  p = push
-  pp = push --prune
-  pa = push --all
-  pt = push --tags
-  b = branch
+  a = add -v .
+  c = commit -vm
+  ca = commit -vam
+  cl = clone -v
+  cl1 = clone -v --depth=1
+  pl = pull -v --prune --progress --autostash --rebase=true
+  plm = pull -v --prune --progress --autostash --rebase=false
+  p = push -v
+  pp = push -v --prune
+  pa = push -v --all
+  pt = push -v --tags
+  b = branch -v
   ba = branch -avv
   bd = push origin --delete
-  s = status -s
+  td = !"git tag --delete $1; git push -v origin --delete $1 #"
+  s = status -vs
   st = stash -u
   sp = stash pop
   m = merge
@@ -27,8 +29,8 @@
   co = checkout
   rh = reset --hard
   sw = switch
-  f = fetch
-  chp = cherry-pick
+  f = fetch -v
+  chp = cherry-pick -v
   d = diff --color --color-words --abbrev
   rn = !"git pl && git rebase origin/${1:-next} && git push -f #"
   feat = !"git fetch && git switch -c feat/$1 origin/next && git push -u #"
@@ -53,8 +55,8 @@
   rebase = false
 
 # so much color
-[color]
-  ui = always
+# [color]
+#   ui = always
 
 [color "diff"]
   meta = yellow bold
@@ -80,8 +82,8 @@
   changed = green
   untracked = cyan
 
-#[http]
-#  sslVerify = false
+# [http]
+#   sslVerify = false
 
 # [credential]
 #   helper = manager
