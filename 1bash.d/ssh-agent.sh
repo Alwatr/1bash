@@ -8,7 +8,7 @@ then
   source $SSH_AGENT_INFO
 fi
 
-if [[ -f ~/.ssh/id_rsa ]]
+if [[ -f ~/.ssh/id_rsa || -f ~/.ssh/id_ed25519 ]]
 then
 
   if ssh-add -l > /dev/null
