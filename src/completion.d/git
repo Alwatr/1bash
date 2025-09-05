@@ -1,0 +1,4 @@
+if command -v ___git_complete >/dev/null 2>&1; then
+    echo "completion: git, g"
+    ___git_complete g __git_main
+fi
