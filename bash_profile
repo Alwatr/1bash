@@ -1,19 +1,27 @@
-#!/bin/bash
+export ONE_BASH="${ONE_BASH:-$DEV_TOOLS/1bash}"
 
-if [ "$BASH" ]; then
-  export ONE_BASH=~/1bash
-
-  if [ -f $ONE_BASH/1bash.sh ]; then
-    . $ONE_BASH/1bash.sh
+for file in $ONE_BASH/src/*.sh; do
+  if [ -r "$file" ]; then
+    echo "import: $file"
+    source "$file"
   fi
+done
+unset file
 
-  # Uncoment the following lines if you want to load ~/.bashrc too
-  # if [ -f ~/.bashrc ]; then
-  #   . ~/.bashrc
-  # fi
+for file in $ONE_BASH/src/lib/*.sh; do
+  if [ -r "$file" ]; then
+    echo "import: $file"
+    source "$file"
+  fi
+done
+unset file
 
-  # if ! shopt -oq posix; then
-  #   cd /srv
-  #   lsa
-  # fi
+if [ ! -f "${HOME}/.inputrc" ]; then
+  echo "link: ~/.inputrc -> 1bash/inputrc"
+  ln -sf "${DEV_TOOLS}/1bash/inputrc" "${HOME}/.inputrc"
+fi
+
+if [ ! -f "${HOME}/.gitconfig" ]; then
+  echo "link: ~/.gitconfig -> 1bash/gitconfig"
+  ln -sf "${DEV_TOOLS}/1bash/gitconfig" "${HOME}/.gitconfig"
 fi
