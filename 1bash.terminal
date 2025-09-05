@@ -8,9 +8,9 @@
 	<data>
 	YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMS
 	AAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRyb290gAGjCwwTVSRudWxs0w0ODxAREldO
-	U1doaXRlXE5TQ29sb3JTcGFjZVYkY2xhc3NNMCAwLjg1MDAwMDAyABADgALSFBUWF1ok
-	Y2xhc3NuYW1lWCRjbGFzc2VzV05TQ29sb3KiFhhYTlNPYmplY3QIERokKTI3SUxRU1dd
-	ZGx5gI6Qkpeiq7O2AAAAAAAAAQEAAAAAAAAAGQAAAAAAAAAAAAAAAAAAAL8=
+	U1doaXRlXE5TQ29sb3JTcGFjZVYkY2xhc3NGMCAwLjkAEAOAAtIUFRYXWiRjbGFzc25h
+	bWVYJGNsYXNzZXNXTlNDb2xvcqIWGFhOU09iamVjdAgRGiQpMjdJTFFTV11kbHmAh4mL
+	kJukrK8AAAAAAAABAQAAAAAAAAAZAAAAAAAAAAAAAAAAAAAAuA==
 	</data>
 	<key>BlinkText</key>
 	<true/>
@@ -41,6 +41,8 @@
 	</data>
 	<key>FontAntialias</key>
 	<true/>
+	<key>FontHeightSpacing</key>
+	<integer>1</integer>
 	<key>FontWidthSpacing</key>
 	<integer>1</integer>
 	<key>ProfileCurrentVersion</key>
@@ -55,6 +57,10 @@
 	</data>
 	<key>ShouldLimitScrollback</key>
 	<integer>1</integer>
+	<key>ShowDimensionsInTitle</key>
+	<false/>
+	<key>ShowRepresentedURLInTitle</key>
+	<false/>
 	<key>ShowRepresentedURLPathInTitle</key>
 	<false/>
 	<key>ShowShellCommandInTitle</key>
