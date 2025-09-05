@@ -1,5 +1,3 @@
-#!/bin/bash
-
 #export EDITOR="nano"
 
 # Easier navigation: .., ..., ~ and -
@@ -42,11 +40,17 @@ alias lsd="ls | grep --color=never '^d'" # only directories
 # alias wget="curl -O"
 
 # Recursively delete `.DS_Store` files
-alias clean_ds_store="find . -name '*.DS_Store' -type f -ls -delete"
+alias clean_ds_store="find . -name '*.DS_Store*' -type f -size -5k -ls -delete"
+alias clean_dot_files="find . -name '._*' -type f -size -5k -ls -delete"
 
 # Shortcuts
 alias a='apt'
 alias ai='apt install -y'
+alias b='brew'
+alias bi='brew install'
+alias bc='brew install --cask'
+alias bd='brew deps --include-build --tree'
+alias bs='brew search'
 alias g='git'
 alias v='vim'
 alias vi='vim'
@@ -58,6 +62,8 @@ alias p1='ping 1.1.1.1'
 alias p8='ping 8.8.8.8'
 alias r='rsync -aPzh'
 alias rd='rsync -aPzh --delete'
+alias mip='curl ip.me; curl ipinfo.io/json'
+alias c.='code .'
 
 alias d='docker'
 alias dc='docker-compose'
