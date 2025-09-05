@@ -1,6 +1,7 @@
 [user]
-  # name = Ali Mihandoost
-  # email = ali.mihandoost@gmail.com
+  name = Ali Mihandoost
+  email = ali.mihandoost@gmail.com
+	signingkey = /Volumes/Alwatr/DevTools/ssh/id_rsa.pub
 
 [alias]
   a = add -v .
@@ -32,14 +33,16 @@
   f = fetch -v
   chp = cherry-pick -v
   d = diff --color --color-words --abbrev
+  ru = rebase-update # depot_tools specific
+  t = tag -ln3
   rn = !"git pl && git rebase origin/${1:-next} && git push -f #"
   feat = !"git fetch && git switch -c feat/$1 origin/next && git push -u #"
+  gca = !"du -hd1 .git; git gc --aggressive --prune=now; du -hd1 .git; #"
   sep = !"git fetch && git switch -c feat/$1 origin/next && shift && git cherry-pick $@ && git push -u && gh pr create --assignee @me --base next --fill --web #"
   l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
   # Show the diff between the latest commit and the current state
   df = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
-  ru = rebase-update # depot_tools specific
-  t = tag -ln3
+  
 
   hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
   type = cat-file -t
@@ -82,23 +85,33 @@
   changed = green
   untracked = cyan
 
-# [http]
-#   sslVerify = false
+[http]
+	postBuffer = 524288000
+  # sslVerify = false
+[https]
+	postBuffer = 524288000
 
 # [credential]
 #   helper = manager
 
 [core]
   autocrlf = input
+  symlinks = true
 
 [init]
   defaultBranch = main
-
-# [commit]
-# 	gpgsign = true
 
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
+
+[gpg]
+	format = ssh
+
+[gpg "ssh"]
+	allowedSignersFile = /Volumes/Alwatr/DevTools/ssh/allowed_signers
+
+[commit]
+	gpgsign = true
