@@ -1,5 +1,3 @@
-#!/bin/bash
-
 if type dircolors > /dev/null 2>&1; then
   if [ -f ~/.dircolors ]; then
     eval "$( dircolors -b ~/.dircolors )"

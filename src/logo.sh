@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # Make your own logo and put it in ~/.1bash_logo
 # http://patorjk.com/software/taag
 
