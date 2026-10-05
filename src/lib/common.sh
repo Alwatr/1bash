@@ -1,6 +1,6 @@
 echoColor() {
   # 1: red, 2: green, 3: yellow, 4: blue, 5: purple, 6: cyan, 7: light gray
-  echo -e "\x1b[0;3$1m$2\x1b[0m"
+  printf "\x1b[0;3$1m$2\x1b[0m"
 }
 
 echoStep() {
