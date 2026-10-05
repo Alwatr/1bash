@@ -48,17 +48,29 @@ git-cleanup() {
 
       yarn_dir=".yarn" # Relative path within the repo dir
       if [ -d "${yarn_dir}" ]; then
-        echo "Removing '${repo_dir}/${yarn_dir}'..."
+        echo "Removing '${yarn_dir}'..."
         du -hd0 "${yarn_dir}"
         if rm -rf "${yarn_dir}"; then
-          echo "Successfully removed ${repo_dir}/${yarn_dir}."
+          echo "Successfully removed ${yarn_dir}."
           git restore "${yarn_dir}"
           du -hd0 "${yarn_dir}"
         else
-          error "Failed to remove ${repo_dir}/${yarn_dir}."
+          error "Failed to remove ${yarn_dir}."
         fi
       else
-        echo "No .yarn directory found in ${repo_dir}."
+        echo "No ${yarn_dir} directory found in ${repo_dir}."
+      fi
+
+			nm="node_modules"
+			if [ -d "${nm}" ]; then
+        echo "Removing '${nm}..."
+        if rm -rf "${nm}"; then
+          echo "Successfully removed ${nm}."
+        else
+          error "Failed to remove ${yarn_dir}."
+        fi
+      else
+        echo "No ${nm} directory found in ${repo_dir}."
       fi
 
       # No need to explicitly cd back; the subshell handles this.
