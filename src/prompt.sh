@@ -16,6 +16,7 @@ elif infocmp xterm-256color >/dev/null 2>&1; then
     export TERM=xterm-256color
 fi
 
+export USER=${USER:-${USERNAME:-unknown}}
 
 set_prompts() {
 
