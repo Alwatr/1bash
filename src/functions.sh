@@ -5,7 +5,9 @@ function md {
 
 # find shorthand
 function f {
-  find . -name "$1" 2>&1 | grep -v 'Permission denied'
+  local name="$1"
+  shift
+  find . -name "$name" $@ 2>&1 | grep -v 'Permission denied'
 }
 
 # List all files, long format, colorized, permissions in octal
@@ -191,4 +193,18 @@ function chrome_insecure() {
     echo "Unsupported OS: $OSTYPE"
     return 1
   fi
+}
+
+function z_scan() {
+	local deep="${1:-0}";
+	for dir in ./*; do
+		if [ -d "$dir" ]; then
+			cd "$dir"
+			# echo "$PWD|1|1768291670" >> ~/.z
+			if [[ "$deep" == '1' ]]; then
+				z_scan 0
+			fi
+			cd ..
+		fi
+	done
 }
