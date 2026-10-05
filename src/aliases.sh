@@ -42,15 +42,18 @@ alias lsd="ls | grep --color=never '^d'" # only directories
 # Recursively delete `.DS_Store` files
 alias clean_ds_store="find . -name '*.DS_Store*' -type f -size -5k -ls -delete"
 alias clean_dot_files="find . -name '._*' -type f -size -5k -ls -delete"
+alias clean_node_modules='find . -name "node_modules" -type d -prune -ls -exec rm -rf "{}" +'
 
 # Shortcuts
 alias a='apt'
 alias ai='apt install -y'
-alias b='brew'
-alias bi='brew install'
-alias bc='brew install --cask'
-alias bd='brew deps --include-build --tree'
-alias bs='brew search'
+alias b='bun --verbose'
+alias bi='bun --verbose --prefer-offline install --frozen-lockfile'
+alias br='brew'
+alias bri='brew install'
+alias brc='brew install --cask'
+alias brd='brew deps --include-build --tree'
+alias brs='brew search'
 alias g='git'
 alias v='vim'
 alias vi='vim'
@@ -62,9 +65,11 @@ alias p1='ping 1.1.1.1'
 alias p8='ping 8.8.8.8'
 alias r='rsync -aPzh'
 alias rd='rsync -aPzh --delete'
-alias mip='curl ip.me; curl ipinfo.io/json'
+alias mip='curl -sSL4 ip.me; curl -sSL4 ipinfo.io/json -w "\nConnect Time: %{time_connect}s\nTotal Time: %{time_total}s\n"'
 alias c='code'
 alias o='open'
+alias zc='z -c'
+alias ungz='gunzip -k'
 
 alias d='docker'
 alias dc='docker-compose'
@@ -74,7 +79,6 @@ alias dclog='dc logs -f --tail'
 
 alias k='kubectl'
 
-alias ungz='gunzip -k'
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
