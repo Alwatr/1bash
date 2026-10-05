@@ -1,4 +1,5 @@
 export ONE_BASH="${ONE_BASH:-$DEV_TOOLS/1bash}"
+export DO_NOT_TRACK=1
 
 for file in $ONE_BASH/src/*.sh; do
   if [ -r "$file" ]; then
